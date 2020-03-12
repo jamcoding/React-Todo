@@ -7,7 +7,7 @@ const todosOriginal = [
   {
     task: 'Organize Garage',
     id: 1528817077286,
-    completed: true
+    completed: false
   },
   {
     task: 'Bake Cookies',
@@ -67,7 +67,7 @@ class App extends React.Component {
         <TodoForm addTodo={this.addTodo} />
         <TodoList 
           todos={this.state.todos} 
-          toggleComplete={this.toggleCompleted}
+          toggleCompleted={this.toggleCompleted}
           clearCompleted={this.clearCompleted}
         />
       </div>
