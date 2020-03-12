@@ -7,7 +7,7 @@ const todosOriginal = [
   {
     task: 'Organize Garage',
     id: 1528817077286,
-    completed: false
+    completed: true
   },
   {
     task: 'Bake Cookies',
@@ -52,6 +52,14 @@ class App extends React.Component {
     });
   };
 
+  clearCompleted = () => {
+    this.setState({
+      todos: this.state.todos.filter(completedTodo => {
+        return !completedTodo.completed;
+      })
+    })
+  }
+
   render() {
     return (
       <div>
@@ -60,6 +68,7 @@ class App extends React.Component {
         <TodoList 
           todos={this.state.todos} 
           toggleComplete={this.toggleCompleted}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );

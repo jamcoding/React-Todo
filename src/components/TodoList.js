@@ -7,6 +7,7 @@ import Todo from './Todo';
 const TodoList = props => {
     return (
         <div>
+            <button onClick={props.clearCompleted}>Clear completed</button>
             {props.todos.map(todo => (
                 <Todo 
                     key={todo.id} 
